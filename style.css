@@ -1,0 +1,321 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #c2c2c2 #000000;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: rgba(43, 48, 58, 0);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #c2c2c2;
+    border-radius: 10px;
+    border: 1px solid #000000;
+  }
+
+/* ========== */
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  mix-blend-mode: exclusion;
+  z-index: -9999;
+  margin: 0;
+  outline:none;
+  background: rgb(0,11,38);
+  background: radial-gradient(circle, rgba(0,11,38, 0.5) 0%, rgba(0,0,0,1) 34%);
+}
+
+html {
+  overflow: overlay;
+  overflow-y: hidden;
+  overflow-x: hidden
+}
+
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background-color: black;
+  font-family: 'Roboto Mono', monospace !important;
+}
+
+.btn-box {
+  width: fit-content;
+}
+
+nav {
+  min-height: 3.5rem;
+  background-color: rgb(30, 41, 58); 
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: row;
+  gap: .2rem;
+}
+
+.nav-link.active {
+  font-weight: bold !important;
+  color: rgba(255, 203, 130, 1) !important;
+}
+
+.nav-link:hover {
+  color: rgba(0, 204, 255, 1) !important;
+}
+
+
+h1, h2, h3, h4, h5, p, label, input[type="text"], input[type="email"], textarea, .nav-link {
+  color: rgb(0, 159, 187) !important;
+  font-weight: bold !important;
+}
+
+#main-title {
+  font-size: 5rem;
+  color: rgba(255, 203, 130, 0.7) !important;
+  margin: 0;
+}
+
+#secondary-title {
+  font-size: 2rem;
+}
+
+#projects-title, #experience-title, #about-title, #connect-title {
+  margin: 20px;
+  color: rgba(255, 203, 130, 0.7) !important;
+}
+
+input[type="text"], input[type="email"], textarea {
+  background-color: rgba(200, 200, 200, 1) !important;
+}
+
+#main-section {
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(00,80,120, 0.1) 50%, rgba(71,11,11,0) 100%);
+  overflow-y: scroll;
+  width: 100vw;
+  height: 100vh;
+  overflow-x:hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+  scroll-padding-top: 3.5rem;
+}
+
+#intro-section-anchor {
+  padding-bottom: 10rem;
+  min-height: 100vh;
+}
+
+#experience-section-anchor, #projects-section-anchor, #about-section-anchor, #connect-section-anchor {
+  padding: 10rem 0 10rem;
+  margin-bottom: 10rem;
+}
+
+#about-section, #experience-section {
+  padding: 0 .8rem 0;
+}
+
+#connect-section {
+  height: fit-content;
+  padding: 0 1.5rem 0;
+  scroll-snap-align: start;
+}
+
+.projects-list {
+  padding: 1rem;
+  border-radius: 25px 25px 25px 25px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+}
+
+.card {
+  background-color: rgba(20, 28, 31, .8);
+  border: 1px solid rgba(255, 203, 130, 0.3);
+  padding: 1rem;
+  height: 100%;
+  border-radius: 10px 10px 10px 10px;
+  backdrop-filter: blur(5px);
+}
+
+.card-text {
+  border-radius: 15px 15px 15px 15px;
+  padding: 3px;
+  height: 100%;
+}
+
+#projects-section, #experience-section, #about-section {
+  scroll-snap-align: start;
+}
+
+.card-img-top {
+  border-radius: 10px 10px 10px 10px;
+}
+
+.experience-item {
+  margin-top: 2rem;
+}
+
+.education-program {
+  margin-top: 2rem;
+}
+
+.resume-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem .7rem .5rem;
+}
+
+.btn-orange {
+  background-color: rgba(255, 158, 40, 0.2);
+  font-weight: bold;
+  border: 1px solid rgba(255, 221, 0, 0.5);
+  color: rgba(255, 203, 130, 1) !important;
+}
+
+.btn-orange:hover {
+  background-color: rgba(205, 140, 80, 0.2);
+  font-weight: bold;
+  color: rgba(255, 221, 0,  1) !important;
+  border: 1px solid rgba(255, 221, 0, 1);
+}
+
+.btn-orange:active {
+  background-color: rgba(205, 140, 80, 1);
+  font-weight: bold;
+}
+
+.btn-blue {
+  font-weight: bold;
+  background-color: rgba(26, 37, 59, 0.5);
+  font-weight: bold;
+  border: 1px solid rgb(23, 128, 163);
+  color: lightblue
+}
+
+.btn-blue:hover {
+  background-color: rgb(23, 128, 163, 0.1);
+  font-weight: bold;
+  border: 1px solid aqua;
+  color: aqua;
+}
+
+.btn-blue:active {
+  background-color: rgb(23, 128, 163, 0.5);
+  font-weight: bold;
+  border: 1px solid aqua;
+  color: aqua;
+}
+
+.piotr-picture {
+  border: 1px solid rgba(255, 203, 130, 0.3);
+  border-radius: 50% !important;
+  height: 40vh;
+  min-height: 350px;
+  object-fit: cover;
+}
+
+.about-item-body {
+  color: rgb(0, 159, 187);
+  font-size: 1.3rem;
+  text-align: center;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.about-items, .experience {
+  border-radius: 25px 25px 25px 25px !important;
+  background-color: rgba(20, 28, 31, .8);
+  font-weight: 600;
+  padding: 3rem;
+  border: 1px solid rgba(255, 203, 130, 0.3);
+
+}
+
+.connect-box {
+  height: fit-content;
+  width: fit-content;
+  border-radius: 25px 25px 25px 25px !important;
+  background-color: rgba(20, 28, 31, .8);
+  padding: 1rem;
+  border: .1rem solid rgba(255, 203, 130, 0.3);
+}
+
+.experience-item-body {
+  border-radius: 20px 20px 20px 20px;
+  padding: .5rem;
+}
+
+#message {
+  height: 8rem;
+}
+
+.fixed-button-group {
+  position: fixed;
+  bottom: 0px;
+  left: 0px; 
+  margin: 1rem;
+  z-index: 999999;
+}
+
+.fixed-button {
+  height: 2.5rem;
+  background-color: rgba(200, 200, 200, 1);
+  border-radius: 10px 10px 10px 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .about-item-body {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .about-item-body {
+    font-size: 1rem;
+  }
+
+  #main-title {
+    font-size: 3rem;
+  }
+
+  #secondary-title {
+    font-size: 1.5rem;
+  }
+
+  .about-items, .experience {
+    padding: 1rem;
+  }
+}
+
+@media only screen and (max-height: 768px) {
+  #main-title {
+    font-size: 3rem;
+  }
+
+  #secondary-title {
+    font-size: 1.5rem;
+  }
+  
+  .about-item-body {
+    font-size: 1rem;
+  }  
+}

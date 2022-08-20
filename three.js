@@ -17,7 +17,7 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 camera.position.setZ( 40 );
 camera.position.setY( 0 );
 
-let donutTexture = textureLoader.load('/images/circuitry.png');
+let donutTexture = textureLoader.load('./images/circuitry.png');
 
 let geometry = new THREE.SphereGeometry( 13, 100, 30);
 let material = new THREE.MeshStandardMaterial({ color: 0x292929} );

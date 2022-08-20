@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
+@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100,200';
 
 /* ===== Scrollbar CSS ===== */
   /* Firefox */
@@ -38,14 +38,11 @@ canvas {
 }
 
 html {
-  overflow: overlay;
-  overflow-y: hidden;
-  overflow-x: hidden
+  overflow: hidden;
 }
 
 body {
-  overflow-y: hidden;
-  overflow-x: hidden;
+  overflow: hidden;
   background-color: black;
   font-family: 'Roboto Mono', monospace !important;
 }
@@ -73,7 +70,6 @@ nav {
 .nav-link:hover {
   color: rgba(0, 204, 255, 1) !important;
 }
-
 
 h1, h2, h3, h4, h5, p, label, input[type="text"], input[type="email"], textarea, .nav-link {
   color: rgb(0, 159, 187) !important;
@@ -137,8 +133,7 @@ input[type="text"], input[type="email"], textarea {
 .projects-list {
   padding: 1rem;
   border-radius: 25px 25px 25px 25px;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .main {
@@ -184,6 +179,7 @@ input[type="text"], input[type="email"], textarea {
   align-items: center;
   gap: .5rem;
   padding: .5rem .7rem .5rem;
+  backdrop-filter: blur(5px);
 }
 
 .btn-orange {
@@ -248,7 +244,7 @@ input[type="text"], input[type="email"], textarea {
   font-weight: 600;
   padding: 3rem;
   border: 1px solid rgba(255, 203, 130, 0.3);
-
+  backdrop-filter: blur(5px);
 }
 
 .connect-box {
@@ -258,6 +254,7 @@ input[type="text"], input[type="email"], textarea {
   background-color: rgba(20, 28, 31, .8);
   padding: 1rem;
   border: .1rem solid rgba(255, 203, 130, 0.3);
+  backdrop-filter: blur(5px);
 }
 
 .experience-item-body {

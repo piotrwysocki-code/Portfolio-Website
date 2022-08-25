@@ -25,7 +25,7 @@ function submitConnectForm(){
     if(connectObj){
         $.ajax({
             type : 'POST',
-            url : 'http://127.0.0.1:4000/send',
+            url : 'https://us-central1-portfolio-website-359822.cloudfunctions.net/app/send',
             data: connectObj,
             dataType : 'json',
             encode: true

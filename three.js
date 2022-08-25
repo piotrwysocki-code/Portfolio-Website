@@ -17,14 +17,14 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 camera.position.setZ( 40 );
 camera.position.setY( 0 );
 
-let donutTexture = textureLoader.load('https://i.postimg.cc/yxLw9wSx/circuitry.png');
+let texture = textureLoader.load('https://i.postimg.cc/yxLw9wSx/circuitry.png');
 
 let geometry = new THREE.SphereGeometry( 13, 100, 30);
 let material = new THREE.MeshStandardMaterial({ color: 0x292929} );
 
 material.metalness = 0.7;
 material.roughness = 0.2;
-material.normalMap = donutTexture;
+material.normalMap = texture;
 
 let sphere = new THREE.Mesh( geometry, material );
 sphere.position.x = 0;
@@ -61,7 +61,7 @@ function addStar() {
   if(stars.length < 400){
     let geometry = new THREE.SphereGeometry(THREE.MathUtils.randFloatSpread(0.4), 24, 24);
     let tempMaterial = new THREE.MeshStandardMaterial( { color: 0xFFFFFF });
-    tempMaterial.normalMap = donutTexture;
+    tempMaterial.normalMap = texture;
     let star = new THREE.Mesh( geometry, tempMaterial );
   
     let [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));

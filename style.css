@@ -122,17 +122,11 @@ input[type="text"], input[type="email"], textarea {
 
 #about-section, #experience-section {
   padding: 0 .8rem 0;
-  margin-top: 3.5rem;
 }
 
 #connect-section {
   min-height: fit-content;
   padding: 0 1.5rem 0;
-  margin-top: 3.5rem;
-}
-
-#projects-section {
-  margin-top: 3.5rem;
 }
 
 .projects-list {

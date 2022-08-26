@@ -18,8 +18,6 @@ $("#submitConnectForm").on('click', ()=>{
 
 function submitConnectForm(){
     window.event.preventDefault;
-    console.log("hello from submit function");
-
     let connectObj = validateForm();
 
     if(connectObj){
@@ -30,15 +28,28 @@ function submitConnectForm(){
             dataType : 'json',
             encode: true
         }).done((results) => {
-                console.log(results);
+            let returnObj = json.parse(results);
+            if(returnObj.Success){
                 grecaptcha.reset();
+                $("#name, #email, #subject, #message").val('').removeClass('is-valid is-invalid');
+                $("#success-message").fadeIn("slow").html(`Your message has been successfully delivered, a confirmation email has been sent to ${connectObj.email}`);
+                setTimeout(()=>{
+                    $("#success-message").html('').fadeOut("slow");
+                }, 15000)
+            }else{
+                grecaptcha.reset();
+                $("#captcha-failed").fadeIn("slow");
+                setTimeout(()=>{
+                    $("#captcha-failed").fadeOut("fast");
+                }, 30000);
+            }
         });
     }
 }
 
 function validateForm(){
     $("#name, #email, #subject, #message").removeClass('is-valid is-invalid');
-    $("#captcha-info, #captcha-error, #captcha-expired").hide();
+    $("#captcha-info, #captcha-error, #captcha-expired, #success-message").hide();
 
     let connectObj = new Connect(
         $("#name").val() || '',
@@ -96,12 +107,14 @@ function validateForm(){
 }
 
 function captchaError(){
+    $("#captcha-info, #captcha-error, #captcha-expired, #captcha-failed, #success-message").hide();
     console.log('captcha network error');
     grecaptcha.reset();
     $("#captcha-error").fadeIn('slow');
 }
 
 function captchaExpired(){
+    $("#captcha-info, #captcha-error, #captcha-expired, #captcha-failed, #success-message").hide();
     console.log('captcha expired');
     grecaptcha.reset();
     $("#captcha-expired").fadeIn('slow');
@@ -109,5 +122,5 @@ function captchaExpired(){
 
 function captchaComplete(){
     console.log('captcha complete');
-    $("#captcha-info, #captcha-error, #captcha-expired").fadeOut('fast');
+    $("#captcha-info, #captcha-error, #captcha-expired, #captcha-failed, #success-message").fadeOut('fast');
 }

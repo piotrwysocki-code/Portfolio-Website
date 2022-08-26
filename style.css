@@ -281,8 +281,13 @@ input[type="text"], input[type="email"], textarea {
   border-radius: 10px 10px 10px 10px;
 }
 
-#captcha-info, #captcha-expired, #captcha-error{
+#captcha-info, #captcha-expired, #captcha-error, #captcha-failed{
   color:Red !important;
+  display: none;
+}
+
+#success-message{
+  color: limegreen !important;
   display: none;
 }
 

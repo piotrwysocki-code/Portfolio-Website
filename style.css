@@ -116,17 +116,23 @@ input[type="text"], input[type="email"], textarea {
 }
 
 #experience-section-anchor, #projects-section-anchor, #about-section-anchor, #connect-section-anchor {
-  padding: 0 0 10rem;
-  margin: 10rem 0 0 0;
+  padding: 10rem 0 10rem;
+  margin-bottom: 10rem;
 }
 
 #about-section, #experience-section {
   padding: 0 .8rem 0;
+  margin-top: 3.5rem;
 }
 
 #connect-section {
   min-height: fit-content;
   padding: 0 1.5rem 0;
+  margin-top: 3.5rem;
+}
+
+#projects-section {
+  margin-top: 3.5rem;
 }
 
 .projects-list {

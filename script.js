@@ -28,8 +28,7 @@ function submitConnectForm(){
             dataType : 'json',
             encode: true
         }).done((results) => {
-            let returnObj = JSON.parse(results);
-            if(returnObj.Success){
+            if(results.Success){
                 grecaptcha.reset();
                 $("#name, #email, #subject, #message").val('').removeClass('is-valid is-invalid');
                 $("#success-message").fadeIn("slow").html(`Your message has been successfully delivered, a confirmation email has been sent to ${connectObj.email}`);

@@ -16,6 +16,10 @@ $("#submitConnectForm").on('click', ()=>{
     submitConnectForm();
 });
 
+$('.navbar-nav>li>a').on('click', ()=>{
+    $('.navbar-collapse').collapse('hide');
+});
+
 function submitConnectForm(){
     window.event.preventDefault;
     let connectObj = validateForm();

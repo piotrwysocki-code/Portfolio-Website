@@ -21,6 +21,11 @@ function submitConnectForm(){
     let connectObj = validateForm();
 
     if(connectObj){
+        $("#submitConnectForm").html(`
+            <div class="spinner-border text-info" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        `);
         $.ajax({
             type : 'POST',
             url : 'https://us-central1-portfolio-website-359822.cloudfunctions.net/app/send',
@@ -35,12 +40,14 @@ function submitConnectForm(){
                 setTimeout(()=>{
                     $("#success-message").html('').fadeOut("slow");
                 }, 15000)
+                $("#submitConnectForm").html(`Send`);
             }else{
                 grecaptcha.reset();
                 $("#captcha-failed").fadeIn("slow");
                 setTimeout(()=>{
                     $("#captcha-failed").fadeOut("fast");
                 }, 30000);
+                $("#submitConnectForm").html(`Send`);
             }
         });
     }

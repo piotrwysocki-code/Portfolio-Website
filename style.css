@@ -107,7 +107,6 @@ input[type="text"], input[type="email"], textarea {
   height: 100vh;
   overflow-x:hidden;
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
   scroll-padding-top: 3.5rem;
 }
 
@@ -128,7 +127,6 @@ input[type="text"], input[type="email"], textarea {
 #connect-section {
   min-height: fit-content;
   padding: 0 1.5rem 0;
-  scroll-snap-align: start;
 }
 
 .projects-list {
@@ -155,10 +153,6 @@ input[type="text"], input[type="email"], textarea {
   border-radius: 15px 15px 15px 15px;
   padding: 3px;
   height: 100%;
-}
-
-#projects-section, #experience-section, #about-section {
-  scroll-snap-align: start;
 }
 
 .card-img-top {
@@ -296,10 +290,6 @@ input[type="text"], input[type="email"], textarea {
 }
 
 @media only screen and (max-width: 768px) {
-  #main-section{
-    scroll-snap-type: none;
-  }
-
   .about-item-body {
     text-align: center;
     margin-top: 2rem;

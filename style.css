@@ -116,8 +116,8 @@ input[type="text"], input[type="email"], textarea {
 }
 
 #experience-section-anchor, #projects-section-anchor, #about-section-anchor, #connect-section-anchor {
-  padding: 10rem 0 10rem;
-  margin-bottom: 10rem;
+  padding: 0 0 10rem;
+  margin: 10rem 0 0 0;
 }
 
 #about-section, #experience-section {

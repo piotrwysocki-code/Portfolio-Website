@@ -9,11 +9,11 @@
 
   /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
-    width: 8px;
+    width: 12px;
   }
 
   *::-webkit-scrollbar-track {
-    background: rgba(43, 48, 58, 0);
+    background: rgba(43, 48, 58, 1);
   }
 
   *::-webkit-scrollbar-thumb {
@@ -33,7 +33,6 @@ canvas {
   z-index: -9999;
   margin: 0;
   outline:none;
-  background: rgb(0,11,38);
   background: radial-gradient(circle, rgba(0,11,38, 0.5) 0%, rgba(0,0,0,1) 34%);
 }
 
@@ -42,53 +41,63 @@ html {
 }
 
 body {
-  overflow: hidden;
+  overflow: overlay;
   background-color: black;
   font-family: 'Roboto Mono', monospace !important;
+  color: rgb(135, 237, 255);
 }
 
 .btn-box {
   width: fit-content;
 }
 
-nav {
-  min-height: 3.5rem;
-  background-color: rgb(30, 41, 58); 
+.navbar {
+  min-height: 50px;
+  transition: 2s ease all !important;
+}
+
+.navbar-secondary {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 50%, rgba(39, 53, 69, 0.4) 100%);
+  box-shadow: 0px 3px 12px 2px rgba(0,0,0,0.79);
+  -webkit-box-shadow: 0px 3px 12px 2px rgba(0,0,0,0.8);
+  -moz-box-shadow: 0px 3px 12px 2px rgba(0,0,0,0.8);
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 10px );
+  transition: 2s ease all !important;
 }
 
 .nav-link {
   display: flex;
   flex-direction: row;
   gap: .2rem;
-}
-
-.nav-link.active {
-  font-weight: bold !important;
-  color: rgba(255, 203, 130, 1) !important;
+  color:rgb(0, 159, 187) !important;
+  font-weight: bold ;
 }
 
 .nav-link:hover {
-  color: rgba(0, 204, 255, 1) !important;
-}
-
-h1, h2, h3, h4, h5, p, label, input[type="text"], input[type="email"], small, textarea, .nav-link {
-  color: rgb(0, 159, 187) !important;
-  font-weight: bold !important;
+  color: aqua !important;
 }
 
 #main-title {
   font-size: 5rem;
-  color: rgba(255, 203, 130, 0.7) !important;
   margin: 0;
+  font-weight: bolder;
 }
 
 #secondary-title {
   font-size: 2rem;
+  font-weight: bold;
 }
 
 #projects-title, #experience-title, #about-title, #connect-title {
   margin: 20px;
-  color: rgba(255, 203, 130, 0.7) !important;
+  font-weight: 600;
+  color: rgba(255, 203, 130, 1) !important;
+}
+
+.experience-item-title{
+  font-weight: 600;
 }
 
 input[type="text"], input[type="email"], textarea {
@@ -117,7 +126,6 @@ input[type="text"], input[type="email"], textarea {
 
 #experience-section-anchor, #projects-section-anchor, #about-section-anchor, #connect-section-anchor {
   padding: 10rem 0 10rem;
-  margin-bottom: 10rem;
 }
 
 #about-section, #experience-section {
@@ -126,13 +134,7 @@ input[type="text"], input[type="email"], textarea {
 
 #connect-section {
   min-height: fit-content;
-  padding: 0 1.5rem 0;
-}
-
-.projects-list {
-  padding: 1rem;
-  border-radius: 25px 25px 25px 25px;
-  overflow: hidden;
+  padding: 0 1.5rem 1rem;
 }
 
 .main {
@@ -141,12 +143,18 @@ input[type="text"], input[type="email"], textarea {
 }
 
 .card {
-  background-color: rgba(20, 28, 31, .8);
-  border: 1px solid rgba(255, 203, 130, 0.3);
-  padding: 1rem;
+  background: rgb(255,255,255);
+  background: linear-gradient(110deg, rgba(255,255,255,0.07) 50%, rgba(255,255,255,0.05) 50.5%);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.1 );
+  backdrop-filter: blur( 4.5px );
+  -webkit-backdrop-filter: blur( 4.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.1 );  padding: 1rem;
   height: 100%;
-  border-radius: 10px 10px 10px 10px;
-  backdrop-filter: blur(5px);
+}
+
+.card-title{
+  font-weight: 600;
 }
 
 .card-text {
@@ -178,10 +186,11 @@ input[type="text"], input[type="email"], textarea {
 }
 
 .btn-orange {
-  background-color: rgba(255, 158, 40, 0.2);
+  background-color: rgba(255, 153, 0, 0.2);
   font-weight: bold;
-  border: 1px solid rgba(255, 221, 0, 0.5);
-  color: rgba(255, 203, 130, 1) !important;
+  color: rgba(255, 221, 0,  1) !important;
+  border-radius: 25px 25px 25px 25px;
+  padding:  10px 25px 10px 25px;
 }
 
 .btn-orange:hover {
@@ -198,14 +207,17 @@ input[type="text"], input[type="email"], textarea {
 
 .btn-blue {
   font-weight: bold;
-  background-color: rgba(26, 37, 59, 0.5);
-  font-weight: bold;
-  border: 1px solid rgb(23, 128, 163);
-  color: lightblue
+  background-color: rgba(127, 191, 186, 0.29);
+  color: rgb(0, 234, 255);
+  border-radius: 25px 25px 25px 25px;
+  padding:  10px 25px 10px 25px;
+  backdrop-filter: blur( 4.5px );
+  -webkit-backdrop-filter: blur( 4.5px );
 }
 
 .btn-blue:hover {
-  background-color: rgb(23, 128, 163, 0.1);
+  background: rgb(255,255,255);
+  background: linear-gradient(110deg, rgba(255,255,255,0.07) 50%, rgba(255,255,255,0.05) 50.5%);
   font-weight: bold;
   border: 1px solid aqua;
   color: aqua;
@@ -214,47 +226,47 @@ input[type="text"], input[type="email"], textarea {
 .btn-blue:active {
   background-color: rgb(23, 128, 163, 0.5);
   font-weight: bold;
-  border: 1px solid aqua;
   color: aqua;
 }
 
 .piotr-picture {
   border: 1px solid rgba(255, 203, 130, 0.3);
   border-radius: 50% !important;
-  height: 40vh;
-  min-height: 350px;
+  max-height: 250px;
   object-fit: cover;
+  margin: 1rem;
+  shape-outside: circle(50%);
 }
 
-.about-item-body {
-  color: rgb(0, 159, 187);
-  font-size: 1.3rem;
-  text-align: center;
-  border-radius: 20px 20px 20px 20px;
+.about-carousel-item-1-title{
+  font-weight: 1000;
 }
 
-.about-items, .experience {
-  border-radius: 25px 25px 25px 25px !important;
-  background-color: rgba(20, 28, 31, .8);
-  font-weight: 600;
+.section-container {
+  background: rgb(255,255,255);
+  background: linear-gradient(110deg, rgba(255,255,255,0.07) 50%, rgba(255,255,255,0.05) 50.5%);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.1 );
+  backdrop-filter: blur( 4.5px );
+  -webkit-backdrop-filter: blur( 4.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.1 );
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.about-carousel-item{
   padding: 3rem;
-  border: 1px solid rgba(255, 203, 130, 0.3);
-  backdrop-filter: blur(5px);
 }
 
-.connect-box {
-  height: fit-content;
-  width: fit-content;
-  border-radius: 25px 25px 25px 25px !important;
-  background-color: rgba(20, 28, 31, .8);
-  padding: 1rem;
-  border: .1rem solid rgba(255, 203, 130, 0.3);
-  backdrop-filter: blur(5px);
+#delicious{
+  width: 100%;
+  border-radius: 25px 25px 25px 25px;
 }
 
-.experience-item-body {
-  border-radius: 20px 20px 20px 20px;
-  padding: .5rem;
+.logo{
+  max-height: 200px;
+  border-radius: 25px 25px 25px 25px;
 }
 
 #message {
@@ -270,10 +282,19 @@ input[type="text"], input[type="email"], textarea {
 }
 
 .fixed-button {
-  height: 2.5rem;
+  height: 3rem;
   background-color: rgba(200, 200, 200, 1);
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 15px 15px 15px 10px;
+  padding: .1rem;
+  transition: 0.5s ease all;
 }
+
+.fixed-button:hover {
+  box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.86);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.86);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.86);
+}
+
 
 #captcha-info, #captcha-expired, #captcha-error, #captcha-failed{
   color:Red !important;
@@ -290,15 +311,6 @@ input[type="text"], input[type="email"], textarea {
 }
 
 @media only screen and (max-width: 768px) {
-  .about-item-body {
-    text-align: center;
-    margin-top: 2rem;
-  }
-
-  .about-item-body {
-    font-size: 1rem;
-  }
-
   #main-title {
     font-size: 3rem;
   }
@@ -307,9 +319,14 @@ input[type="text"], input[type="email"], textarea {
     font-size: 1.5rem;
   }
 
-  .about-items, .experience {
+  .about-container, .experience {
     padding: 1rem;
   }
+}
+
+
+@media only screen and (max-width: 992px) {
+
 }
 
 @media only screen and (max-height: 768px) {

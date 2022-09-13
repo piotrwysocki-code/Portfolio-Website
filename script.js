@@ -12,12 +12,29 @@ class Connect {
     }
 }
 
-$("#submitConnectForm").on('click', ()=>{   
+$("#main-section").scroll(()=> {
+    if ($("#projects-section-anchor").position().top <= 0) {
+        $(".navbar").addClass("navbar-secondary");
+    } else {
+        $(".navbar").removeClass("navbar-secondary");
+    }
+});
+
+$("#submitConnectForm").on('click', ()=> {
     submitConnectForm();
 });
 
-$('.navbar-nav>li>a').on('click', ()=>{
+$('.navbar-nav>li>a').on('click', ()=> {
     $('.navbar-collapse').collapse('hide');
+});
+
+$('.navbar').on('show.bs.collapse', ()=> {
+    $(".navbar").addClass("navbar-secondary");
+}).on('hide.bs.collapse', ()=> {
+    if ($("#projects-section-anchor").position().top >= window.innerHeight) {
+        $(".navbar").removeClass("navbar-secondary");
+        console.log($("#projects-section-anchor").position().top <= window.innerHeight);
+    }
 });
 
 function submitConnectForm(){
@@ -119,8 +136,10 @@ function validateForm(){
 function captchaError(){
     $("#captcha-info, #captcha-error, #captcha-expired, #captcha-failed, #success-message").hide();
     console.log('captcha network error');
-    grecaptcha.reset();
-    $("#captcha-error").fadeIn('slow');
+    setTimeout(()=>{
+        grecaptcha.reset();
+        $("#captcha-error").fadeIn('slow');
+    }, 30000)
 }
 
 function captchaExpired(){

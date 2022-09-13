@@ -18,23 +18,29 @@ camera.position.setZ( 40 );
 camera.position.setY( 0 );
 
 let texture = textureLoader.load('https://i.postimg.cc/yxLw9wSx/circuitry.png');
+let planetTexture = textureLoader.load('images/planetTexture.jpg');
 
 let geometry = new THREE.SphereGeometry( 13, 100, 30);
 let material = new THREE.MeshStandardMaterial({ color: 0x292929} );
+
+let globeLight = new THREE.PointLight(0xFF0F00, 2);
+globeLight.position.set(0, 8, 0);
+
 
 material.metalness = 0.7;
 material.roughness = 0.2;
 material.normalMap = texture;
 
-let sphere = new THREE.Mesh( geometry, material );
-sphere.position.x = 0;
+let sun = new THREE.Mesh( geometry, material );
+sun.position.x = 0;
 
-scene.add( sphere );
+scene.add( sun );
+scene.add(globeLight);
 
-let light1 = new THREE.PointLight(0x0000FF, 3);
-let light2 = new THREE.PointLight(0x004b85, 3);
-let light3 = new THREE.PointLight(0x0000FF, 0.3);
-let light4 = new THREE.PointLight(0xFF2000, 0.3);
+let light1 = new THREE.PointLight(0x0000FF, 1);
+let light2 = new THREE.PointLight(0x00000FF, 0);
+let light3 = new THREE.PointLight(0x0f0FF, 1);
+let light4 = new THREE.PointLight(0xFF2000, 0.3); /*0xff00a6*/
 
 light1.position.set(-15.86, -30, -26.65);
 light2.position.set(20, 50, -26.65);
@@ -43,29 +49,23 @@ light4.position.set(-100, 0, -100);
 
 scene.add(light1, light2, light3, light4);
 
-let lightHelper1 = new THREE.PointLightHelper(light1);
-let lightHelper2 = new THREE.PointLightHelper(light2);
-let lightHelper3 = new THREE.PointLightHelper(light3);
-let lightHelper4 = new THREE.PointLightHelper(light4);
-
-//scene.add(lightHelper1, lightHelper2, lightHelper3, lightHelper4);
 
 let controls = new OrbitControls(camera, renderer.domElement);
 controls.autoRotate = true;
 controls.autoRotateSpeed = 1.5;
-camera.lookAt(sphere);
+camera.lookAt(sun);
 
 let stars = [];
 
 function addStar() {
   if(stars.length < 400){
-    let geometry = new THREE.SphereGeometry(THREE.MathUtils.randFloatSpread(0.4), 24, 24);
+    let geometry = new THREE.SphereGeometry(THREE.MathUtils.randFloatSpread(0.5), 24, 24);
     let tempMaterial = new THREE.MeshStandardMaterial( { color: 0xFFFFFF });
-    tempMaterial.normalMap = texture;
+    tempMaterial.normalMap = planetTexture;
     let star = new THREE.Mesh( geometry, tempMaterial );
-  
+
     let [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
-    star.position.set(x, y, z)
+    star.position.set(x, y, z);
     stars.push(star);
     scene.add(star);
     scene.updateMatrixWorld(true);
@@ -91,7 +91,7 @@ window.addEventListener('resize', () =>
 
 function updateStars() {
   stars.map(x => {
-    x.position.z += 0.5;
+    x.position.z += 0.3;
     let position = new THREE.Vector3();
     position.setFromMatrixPosition( x.matrixWorld );
     if(position.z > 100){
@@ -116,17 +116,78 @@ function onDocumentMouseMove(event) {
   mouseY = (event.clientY - windowHalfY);
 }
 
+let planetGeo = new THREE.SphereGeometry(2, 10, 24);
+let OSGMaterial = new THREE.MeshStandardMaterial( { color: 0x0000FF });
+OSGMaterial.normalMap = planetTexture;
+let planet = new THREE.Mesh( planetGeo, OSGMaterial );
+let planet2 = new THREE.Mesh( planetGeo, OSGMaterial );
+let planet3 = new THREE.Mesh( planetGeo, OSGMaterial );
+let planet4 = new THREE.Mesh( planetGeo, OSGMaterial );
+
+planet2.position.y = 15
+planet3.position.z = 30
+planet4.position.y = 30
+planet.position.x = 20;
+
+let planetObj = new THREE.Object3D();
+planetObj.add(planet);
+planetObj.position.x = 0;
+scene.add(planetObj);
+
+let planetObj2 = new THREE.Object3D();
+planetObj2.add(planet);
+planetObj2.position.x = 0;
+scene.add(planetObj2);
+
+let planetObj3 = new THREE.Object3D();
+planetObj3.add(planet);
+planetObj3.position.x = 0;
+scene.add(planetObj3);
+
+let planetObj4 = new THREE.Object3D();
+planetObj4.add(planet);
+planetObj4.position.x = 0;
+scene.add(planetObj4);
+
+planetObj2.add(planet2);
+planetObj3.add(planet3);
+planetObj4.add(planet4);
+
 function animate() {
 	requestAnimationFrame( animate );
 
   targetX = mouseX * .001;
   targetY = mouseY * .001;
-  sphere.rotation.y += 0.002;
-  sphere.rotation.x += 0.002;
-  sphere.rotation.z += 0.002;
-  sphere.rotation.y += .02 * (targetX - sphere.rotation.y);
-  sphere.rotation.x += .02 * (targetY - sphere.rotation.x);
-  sphere.rotation.z += -.02 * (targetY - sphere.rotation.x);
+  sun.rotation.y += 0.002;
+  sun.rotation.x += 0.002;
+  sun.rotation.z += 0.002;
+  sun.rotation.y += .02 * (targetX - sun.rotation.y);
+  sun.rotation.x += .02 * (targetY - sun.rotation.x);
+  sun.rotation.z += -.02 * (targetY - sun.rotation.x);
+  planetObj.rotateY(0.005);
+  planetObj.rotateX(0.005);
+  planetObj.rotateZ(-0.007);
+  planetObj.rotation.y += .1 * (targetX - sun.rotation.y);
+  planetObj.rotation.x += .1 * (targetY - sun.rotation.x);
+  planetObj.rotation.z += -.1 * (targetY - sun.rotation.x);
+  planetObj2.rotateY(-0.009);
+  planetObj2.rotateX(0.009);
+  planetObj2.rotateZ(0.009);
+  planetObj2.rotation.y += .002 * (targetX - sun.rotation.y);
+  planetObj2.rotation.x += .002 * (targetY - sun.rotation.x);
+  planetObj2.rotation.z += -.002 * (targetY - sun.rotation.x);
+  planetObj3.rotateY(-0.009);
+  planetObj3.rotateX(-0.003);
+  planetObj3.rotateZ(0.007);
+  planetObj3.rotation.y += .005 * (targetX - sun.rotation.y);
+  planetObj3.rotation.x += .007 * (targetY - sun.rotation.x);
+  planetObj3.rotation.z += -.002 * (targetY - sun.rotation.x);
+  planetObj4.rotateY(-0.002);
+  planetObj4.rotateX(-0.006);
+  planetObj4.rotateZ(0.004);
+  planetObj4.rotation.y += -.005 * (targetX - sun.rotation.y);
+  planetObj4.rotation.x += -.007 * (targetY - sun.rotation.x);
+  planetObj4.rotation.z += -.002 * (targetY - sun.rotation.x);
 
   controls.update();
   addStar();

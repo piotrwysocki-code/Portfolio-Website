@@ -13,19 +13,18 @@ class Connect {
 }
 
 let isTitleVisible;
-let mainTitleText = $("#main-title").text();
-let splitText = mainTitleText.split(" ");
-
-$("#main-title").text('');
-
-splitText.map((item, index)=>{
-    $("#main-title").append(`
-        <span class="main-title-span">${item}</span>
-    `);
-})
 
 function showTitle(){
-    $('.main-title').hide().fadeIn(1500);
+    let mainTitleText = "Hi, I'm Piotr";
+    let splitText = mainTitleText.split(" ");
+
+    $("#main-title").text('');
+
+    splitText.map((item, index)=>{
+        $("#main-title").append(`
+            <span class="main-title-span">${item}</span>
+        `);
+    })
 
     let char = 0;
     let timer = setInterval(()=>{
@@ -45,6 +44,7 @@ function complete(timer) {
 }
 
 $(()=>{
+    $('.main-title').hide().fadeIn(2500);
     showTitle();
 })
 
@@ -61,10 +61,15 @@ $("#main-section").scroll(()=> {
             isTitleVisible = false;
         }
     }
-    
+
     if  ($(".main-title").position().top >= 0) {
         if(isTitleVisible == false){
-            $('.main-title').animate({opacity: 1}, 500);
+            $('.main-title').animate({opacity: 1}, 2000);
+            $('.main-title-span').removeClass('fade');
+            $('.main-title-span').text('');
+
+            showTitle();
+
             isTitleVisible = true;
         }
     }

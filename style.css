@@ -204,6 +204,15 @@ input[type="text"], input[type="email"], textarea {
   gap: .5rem;
   padding: .5rem .7rem .5rem;
   backdrop-filter: blur(5px);
+  transition: 3s ease-out all;
+  animation-name: moveBtn;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+}
+
+@keyframes moveBtn {
+  from { transform: translateY(100px);}
+  to { transform: translateY(0);}
 }
 
 .btn-orange {

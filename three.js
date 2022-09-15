@@ -18,7 +18,7 @@ camera.position.setZ( 40 );
 camera.position.setY( 0 );
 
 let texture = textureLoader.load('https://i.postimg.cc/yxLw9wSx/circuitry.png');
-let planetTexture = textureLoader.load('images/planetTexture.jpg');
+let planetTexture = textureLoader.load('https://i.postimg.cc/fTpvM3ck/planet-Texture.jpg');
 
 let geometry = new THREE.SphereGeometry( 13, 100, 30);
 let material = new THREE.MeshStandardMaterial({ color: 0x292929} );
@@ -60,7 +60,7 @@ let stars = [];
 function addStar() {
   if(stars.length < 400){
     let geometry = new THREE.SphereGeometry(THREE.MathUtils.randFloatSpread(0.5), 24, 24);
-    let tempMaterial = new THREE.MeshStandardMaterial( { color: 0xFFFFFF });
+    let tempMaterial = new THREE.MeshStandardMaterial( { color: 0x00fFFF });
     tempMaterial.normalMap = planetTexture;
     let star = new THREE.Mesh( geometry, tempMaterial );
 
@@ -117,7 +117,7 @@ function onDocumentMouseMove(event) {
 }
 
 let planetGeo = new THREE.SphereGeometry(2, 10, 24);
-let OSGMaterial = new THREE.MeshStandardMaterial( { color: 0x0000FF });
+let OSGMaterial = new THREE.MeshStandardMaterial( { color: 0x0ff0FF });
 OSGMaterial.normalMap = planetTexture;
 let planet = new THREE.Mesh( planetGeo, OSGMaterial );
 let planet2 = new THREE.Mesh( planetGeo, OSGMaterial );

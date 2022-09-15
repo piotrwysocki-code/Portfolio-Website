@@ -12,11 +12,61 @@ class Connect {
     }
 }
 
+let isTitleVisible;
+let mainTitleText = $("#main-title").text();
+let splitText = mainTitleText.split(" ");
+
+$("#main-title").text('');
+
+splitText.map((item, index)=>{
+    $("#main-title").append(`
+        <span class="main-title-span">${item}</span>
+    `);
+})
+
+function showTitle(){
+    $('.main-title').hide().fadeIn(1500);
+
+    let char = 0;
+    let timer = setInterval(()=>{
+        $($("#main-title").find($('span'))[char]).addClass(`fade`);
+        char++;
+        if(char == splitText.length){
+            complete(timer);
+            isTitleVisible = true;
+            return;
+        }
+    }, 150);
+}
+
+function complete(timer) {
+    clearInterval(timer);
+    timer = null;
+}
+
+$(()=>{
+    showTitle();
+})
+
 $("#main-section").scroll(()=> {
     if ($("#projects-section-anchor").position().top <= 0) {
         $(".navbar").addClass("navbar-secondary");
     } else {
         $(".navbar").removeClass("navbar-secondary");
+    }
+
+    if  ($(".main-title").position().top <= 0) {
+        if(isTitleVisible == true){
+            $('.main-title').animate({opacity: 0}, 500);
+            isTitleVisible = false;
+        }
+    }
+    
+    if  ($(".main-title").position().top >= 0) {
+        if(isTitleVisible == false){
+            $('.main-title').animate({opacity: 1}, 500);
+            isTitleVisible = true;
+        }
     }
 });
 

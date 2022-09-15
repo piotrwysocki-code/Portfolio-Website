@@ -1,4 +1,5 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100,200';
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Press+Start+2P&display=swap');
 
 /* ===== Scrollbar CSS ===== */
   /* Firefox */
@@ -80,9 +81,25 @@ body {
 }
 
 #main-title {
-  font-size: 5rem;
+  font-family: 'Press Start 2P';
+  font-size: 3.5rem;
   margin: 0;
   font-weight: bolder;
+}
+
+.main-title-span{
+  opacity: 0;
+  transition: all 1s ease;
+  transform: translateY(-20px);
+  display: inline-block;
+  color: rgb(55, 0, 255);
+
+}
+
+.main-title-span.fade{
+  opacity: 1;
+  transform: translateY(0px);
+  color: rgb(135, 237, 255);
 }
 
 #secondary-title {
@@ -140,6 +157,10 @@ input[type="text"], input[type="email"], textarea {
 .main {
   width: 100vw;
   height: 100vh;
+}
+
+
+.main-title {
 }
 
 .card {
@@ -242,6 +263,11 @@ input[type="text"], input[type="email"], textarea {
   font-weight: 1000;
 }
 
+
+.about-carousel-item{
+  padding: 3rem 0rem 3rem;
+}
+
 .section-container {
   background: rgb(255,255,255);
   background: linear-gradient(110deg, rgba(255,255,255,0.07) 50%, rgba(255,255,255,0.05) 50.5%);
@@ -253,10 +279,6 @@ input[type="text"], input[type="email"], textarea {
   border: 1px solid rgba( 255, 255, 255, 0.1 );
   padding: 2rem;
   box-sizing: border-box;
-}
-
-.about-carousel-item{
-  padding: 3rem;
 }
 
 #delicious{

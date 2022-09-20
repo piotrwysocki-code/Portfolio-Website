@@ -58,7 +58,7 @@ camera.lookAt(sun);
 let stars = [];
 
 function addStar() {
-  if(stars.length < 400){
+  if(stars.length < 200){
     let geometry = new THREE.SphereGeometry(THREE.MathUtils.randFloatSpread(0.5), 24, 24);
     let tempMaterial = new THREE.MeshStandardMaterial( { color: 0x00fFFF });
     tempMaterial.normalMap = planetTexture;
@@ -91,11 +91,12 @@ window.addEventListener('resize', () =>
 
 function updateStars() {
   stars.map(x => {
-    x.position.z += 0.3;
+    x.position.z += 0.4;
+
     let position = new THREE.Vector3();
     position.setFromMatrixPosition( x.matrixWorld );
     if(position.z > 100){
-      x.position.z = -90;
+      x.position.z = -50;
     }
   });
 }

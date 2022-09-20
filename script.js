@@ -112,9 +112,11 @@ function submitConnectForm(){
             if(results.Success){
                 grecaptcha.reset();
                 $("#name, #email, #subject, #message").val('').removeClass('is-valid is-invalid');
-                $("#success-message").html(`Your message has been successfully delivered, a confirmation email has been sent to ${connectObj.email}`).fadeIn("slow");
+                $("#success-message").html(`Your message has been successfully delivered, a confirmation email has been sent to <b>${connectObj.email}`).fadeIn("slow");
                 setTimeout(()=>{
-                    $("#success-message").fadeOut("slow").html('');
+                    $("#success-message").fadeOut("slow", ()=>{
+                        $("#success-message").html('');
+                    });
                 }, 15000)
                 $("#submitConnectForm").html(`Send`);
             }else{

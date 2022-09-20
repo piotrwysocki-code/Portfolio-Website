@@ -133,7 +133,7 @@ input[type="text"], input[type="email"], textarea {
   height: 100vh;
   overflow-x:hidden;
   scroll-behavior: smooth;
-  scroll-padding-top: 3.5rem;
+  scroll-padding-top: 6rem;
 }
 
 #intro-section-anchor {

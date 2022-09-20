@@ -49,11 +49,11 @@ light4.position.set(-100, 0, -100);
 
 scene.add(light1, light2, light3, light4);
 
-
+/*
 let controls = new OrbitControls(camera, renderer.domElement);
 controls.autoRotate = true;
 controls.autoRotateSpeed = 1.5;
-camera.lookAt(sun);
+camera.lookAt(sun);*/
 
 let stars = [];
 
@@ -189,8 +189,8 @@ function animate() {
   planetObj4.rotation.y += -.005 * (targetX - sun.rotation.y);
   planetObj4.rotation.x += -.007 * (targetY - sun.rotation.x);
   planetObj4.rotation.z += -.002 * (targetY - sun.rotation.x);
-
-  controls.update();
+/*
+  controls.update();*/
   addStar();
   updateStars();
 	renderer.render( scene, camera );

@@ -89,9 +89,12 @@ body {
   font-size: 3.5rem;
   margin: 0;
   font-weight: bolder;
+  mix-blend-mode: exclusion;
+
 }
 
 #main-logo{
+  mix-blend-mode: exclusion;
   max-height: 200px;
 }
 
@@ -113,6 +116,8 @@ body {
 #secondary-title {
   font-size: 2rem;
   font-weight: bold;
+  mix-blend-mode: exclusion;
+
 }
 
 #projects-title, #experience-title, #about-title, #connect-title {

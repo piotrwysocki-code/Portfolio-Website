@@ -80,11 +80,19 @@ body {
   color: aqua !important;
 }
 
+.navbar-brand > img {
+  max-height: 45px;
+}
+
 #main-title {
   font-family: 'Press Start 2P';
   font-size: 3.5rem;
   margin: 0;
   font-weight: bolder;
+}
+
+#main-logo{
+  max-height: 200px;
 }
 
 .main-title-span{

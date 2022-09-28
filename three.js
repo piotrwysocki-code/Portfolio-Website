@@ -20,8 +20,8 @@ camera.position.setY( 0 );
 let texture = textureLoader.load('https://i.postimg.cc/yxLw9wSx/circuitry.png');
 let planetTexture = textureLoader.load('https://i.postimg.cc/fTpvM3ck/planet-Texture.jpg');
 
-let geometry = new THREE.SphereGeometry( 13, 100, 30);
-let material = new THREE.MeshStandardMaterial({ color: 0x292929} );
+let geometry = new THREE.SphereGeometry( 13, 30, 30);
+let material = new THREE.MeshStandardMaterial({ color: 0xEC18D8} );
 
 let globeLight = new THREE.PointLight(0xFF0F00, 2);
 globeLight.position.set(0, 8, 0);
@@ -58,7 +58,7 @@ camera.lookAt(sun);*/
 let stars = [];
 
 function addStar() {
-  if(stars.length < 200){
+  if(stars.length < 175){
     let geometry = new THREE.SphereGeometry(THREE.MathUtils.randFloatSpread(0.5), 24, 24);
     let tempMaterial = new THREE.MeshStandardMaterial( { color: 0x00fFFF });
     tempMaterial.normalMap = planetTexture;
@@ -117,16 +117,20 @@ function onDocumentMouseMove(event) {
   mouseY = (event.clientY - windowHalfY);
 }
 
-let planetGeo = new THREE.SphereGeometry(2, 10, 24);
+let planetGeo1 = new THREE.SphereGeometry(1, 24, 24);
+let planetGeo2 = new THREE.SphereGeometry(3, 24, 24);
+let planetGeo3 = new THREE.SphereGeometry(6, 24, 24);
+let planetGeo4 = new THREE.SphereGeometry(2, 24, 24);
 let OSGMaterial = new THREE.MeshStandardMaterial( { color: 0x0ff0FF });
 OSGMaterial.normalMap = planetTexture;
-let planet = new THREE.Mesh( planetGeo, OSGMaterial );
-let planet2 = new THREE.Mesh( planetGeo, OSGMaterial );
-let planet3 = new THREE.Mesh( planetGeo, OSGMaterial );
-let planet4 = new THREE.Mesh( planetGeo, OSGMaterial );
+let planet = new THREE.Mesh( planetGeo1, OSGMaterial );
+let planet2 = new THREE.Mesh( planetGeo2, OSGMaterial );
+let planet3 = new THREE.Mesh( planetGeo3, OSGMaterial );
+let planet4 = new THREE.Mesh( planetGeo4, OSGMaterial );
 
 planet2.position.y = 15
 planet3.position.z = 30
+planet3.position.y = 50
 planet4.position.y = 30
 planet.position.x = 20;
 

@@ -82,6 +82,11 @@ body {
 
 .navbar-brand > img {
   max-height: 45px;
+  opacity:0;
+}
+
+.nav-link > span{
+  max-height: 10px !important;
 }
 
 #main-title {
@@ -90,7 +95,6 @@ body {
   margin: 0;
   font-weight: bolder;
   mix-blend-mode: exclusion;
-
 }
 
 #main-logo{
@@ -98,13 +102,16 @@ body {
   max-height: 200px;
 }
 
-.main-title-span{
+.main-title {
   opacity: 0;
-  transition: all 1s ease;
+}
+
+
+.main-title-span{
   transform: translateY(-20px);
   display: inline-block;
+  transition: all 1s ease;
   color: rgb(55, 0, 255);
-
 }
 
 .main-title-span.fade{
@@ -171,11 +178,6 @@ input[type="text"], input[type="email"], textarea {
   width: 100vw;
   height: 100vh;
 }
-
-
-.main-title {
-}
-
 .card {
   background: rgb(255,255,255);
   background: linear-gradient(110deg, rgba(255,255,255,0.07) 50%, rgba(255,255,255,0.05) 50.5%);

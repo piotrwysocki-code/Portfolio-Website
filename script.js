@@ -15,7 +15,7 @@ class Connect {
 let isTitleVisible;
 
 function showTitle(){
-    let mainTitleText = "Hi, I'm Piotr";
+    let mainTitleText = "Piotr Wysocki";
     let splitText = mainTitleText.split(" ");
 
     $("#main-title").text('');
@@ -35,7 +35,7 @@ function showTitle(){
             isTitleVisible = true;
             return;
         }
-    }, 150);
+    }, 200);
 }
 
 function complete(timer) {
@@ -44,7 +44,7 @@ function complete(timer) {
 }
 
 $(()=>{
-    $('.main-title').hide().fadeIn(2500);
+    $('.main-title').animate({opacity: 1}, 3000);
     showTitle();
 })
 
@@ -57,14 +57,16 @@ $("#main-section").scroll(()=> {
 
     if  ($(".main-title").position().top <= 0) {
         if(isTitleVisible == true){
-            $('.main-title').animate({opacity: 0}, 500);
+            $('.main-title').animate({opacity: 0}, 1000);
+            $('.navbar-brand > img').animate({opacity: 1}, 1000);
             isTitleVisible = false;
         }
     }
 
     if  ($(".main-title").position().top >= 0) {
         if(isTitleVisible == false){
-            $('.main-title').animate({opacity: 1}, 2000);
+            $('.main-title').animate({opacity: 1}, 3000);
+            $('.navbar-brand > img').animate({opacity: 0}, 1000);
             $('.main-title-span').removeClass('fade');
             $('.main-title-span').text('');
 

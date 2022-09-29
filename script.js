@@ -12,7 +12,9 @@ class Connect {
     }
 }
 
-let isTitleVisible;
+let isTitleVisible = true;
+let isCollapseNavVisible = false;
+let isLogoVisible = false;
 
 function showTitle(){
     let mainTitleText = "Piotr Wysocki";
@@ -52,26 +54,29 @@ $("#main-section").scroll(()=> {
     if ($("#projects-section-anchor").position().top <= 0) {
         $(".navbar").addClass("navbar-secondary");
     } else {
-        $(".navbar").removeClass("navbar-secondary");
+        if(!isCollapseNavVisible){
+            $(".navbar").removeClass("navbar-secondary");
+        }
     }
 
     if  ($(".main-title").position().top <= 0) {
         if(isTitleVisible == true){
             $('.main-title').animate({opacity: 0}, 1000);
             $('.navbar-brand > img').animate({opacity: 1}, 1000);
+            isLogoVisible = true
             isTitleVisible = false;
         }
     }
 
     if  ($(".main-title").position().top >= 0) {
         if(isTitleVisible == false){
-            $('.main-title').animate({opacity: 1}, 3000);
             $('.navbar-brand > img').animate({opacity: 0}, 1000);
+            $('.main-title').animate({opacity: 1}, 3000);
             $('.main-title-span').removeClass('fade');
             $('.main-title-span').text('');
-
             showTitle();
 
+            isLogoVisible = false
             isTitleVisible = true;
         }
     }
@@ -86,12 +91,30 @@ $('.navbar-nav>li>a').on('click', ()=> {
 });
 
 $('.navbar').on('show.bs.collapse', ()=> {
+    $('.nav-link').removeClass("nav-link-hover");
     $(".navbar").addClass("navbar-secondary");
-}).on('hide.bs.collapse', ()=> {
+    $('.nav-link-text').animate({maxWidth: 300}, 1000);
+
+    isCollapseNavVisible = true;
+    if(isLogoVisible == false){
+        $('.navbar-brand > img').animate({opacity: 1}, 1000);
+        isLogoVisible = true;
+    }
+}).on('hide.bs.collapse', ()=> 
+{
+    $('.nav-link-text').animate({maxWidth: 0}, 50);
+    $('.nav-link').addClass("nav-link-hover");
+
+    if(isTitleVisible){
+        $('.navbar-brand > img').animate({opacity: 0}, 1000);
+        isLogoVisible = !isLogoVisible;
+    }
+
     if ($("#projects-section-anchor").position().top >= window.innerHeight) {
         $(".navbar").removeClass("navbar-secondary");
         console.log($("#projects-section-anchor").position().top <= window.innerHeight);
     }
+    isCollapseNavVisible = false;
 });
 
 function submitConnectForm(){

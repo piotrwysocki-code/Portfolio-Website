@@ -26,7 +26,10 @@
   </head>
   <body>
     <div id="main-section">
-      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <nav
+        class="navbar navbar-expand-lg navbar-dark fixed-top"
+        role="navigation"
+      >
         <div class="container-fluid">
           <button
             class="navbar-toggler"
@@ -40,35 +43,40 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav g-3" style="--bs-scroll-height: 400px">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#intro-section"
-                  >Home
+                <a
+                  class="nav-link nav-link-hover"
+                  aria-current="page"
+                  href="#intro-section"
+                  ><span class="nav-link-text">Home</span>
                   <span class="material-symbols-outlined"> home </span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="projects-nav" href="#projects-section"
-                  >Projects
+                <a
+                  class="nav-link nav-link-hover"
+                  id="projects-nav"
+                  href="#projects-section"
+                  ><span class="nav-link-text">Projects</span>
                   <span class="material-symbols-outlined"> folder_open </span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#experience-section"
-                  >Experience
+                <a class="nav-link nav-link-hover" href="#experience-section"
+                  ><span class="nav-link-text">Experience</span>
                   <span class="material-symbols-outlined"> schedule </span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#about-section"
-                  >About Me<span class="material-symbols-outlined">
-                    person
-                  </span>
+                <a class="nav-link nav-link-hover" href="#about-section"
+                  ><span class="nav-link-text">About</span>
+                  <span class="material-symbols-outlined"> person </span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#connect-section"
-                  >Connect
+                <a class="nav-link nav-link-hover" href="#connect-section"
+                  ><span class="nav-link-text">Connect</span>
                   <span class="material-symbols-outlined">
                     connect_without_contact
                   </span>
@@ -443,7 +451,8 @@
                 <!-- <img src="images/piotr.png" class="piotr-picture" /> -->
                 <h1 class="about-carousel-item-1-title">Piotr Wysocki</h1>
                 <hr style="width: 80%" />
-                <h4>Full-Stack Developer</h4>
+                <h4>Wanna-be Developer</h4>
+                <h5 class="fs-6">(am I a real developer yet?)</h5>
                 <div
                   class="d-flex flex-row justify-content-center align-items-center gap-5 mt-4"
                 >

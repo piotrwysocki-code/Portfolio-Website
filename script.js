@@ -106,7 +106,7 @@ $('.navbar').on('show.bs.collapse', ()=> {
     $('.navbar-nav').addClass("nav-link-hover");
 
     if(isTitleVisible){
-        $('.navbar-brand > img').animate({opacity: 0}, 1000);
+        $('.navbar-brand > img').animate({opacity: 0}, 50);
         isLogoVisible = !isLogoVisible;
     }
 

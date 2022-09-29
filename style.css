@@ -84,8 +84,7 @@ body {
 .nav-link-hover:hover .nav-link-text { 
   animation-name: navAnim;
   animation-fill-mode: forwards;  
-  animation-duration: 3s;
-  animation-delay: 1.25s;
+  animation-duration: 2s;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
 }

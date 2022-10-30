@@ -114,224 +114,448 @@
       >
         <div id="projects-section">
           <h1 id="projects-title" class="display-4">Projects</h1>
-          <div class="container projects-container">
-            <div class="row g-5">
-              <div
-                class="card-wrapper col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-12"
-              >
-                <div class="card">
-                  <div class="image-wrapper">
-                    <img
-                      src="/images/nebula.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
+          <div class="container projects-container d-flex flex-col">
+            <div
+              id="carouselControls"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="10000"
+            >
+              <div class="carousel-inner m-3">
+                <div class="carousel-item active">
+                  <div class="row g-5 d-flex justify-content-center">
+                    <div class="card-wrapper col-lg-8 col-12">
+                      <div class="card">
+                        <div class="image-wrapper">
+                          <img
+                            src="/images/project-imgs/dogdetective.gif"
+                            class="card-img-top"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body">
+                          <h4 class="card-title">Dog Detective</h4>
+
+                          <p class="card-text">
+                            This Express server is acting as the front-end for
+                            Dog Detective. Dog Detective is a dog breed image
+                            classification project based on the breeds in the
+                            <a
+                              style="text-decoration: none; color: aqua"
+                              href="http://vision.stanford.edu/aditya86/ImageNetDogs/"
+                              >Stanford Dogs Dataset</a
+                            >.
+                          </p>
+                        </div>
+                        <div
+                          class="d-flex flex-row flex-wrap gap-2 justify-content-center align-items-center mb-3"
+                        >
+                          <span class="tech-item">JQuery</span>
+                          <span class="tech-item">AJAX</span>
+                          <span class="tech-item">Bootstrap 5</span>
+                          <span class="tech-item">Node.js</span>
+                          <span class="tech-item">Express</span>
+                          <span class="tech-item">AWS EC2</span>
+                          <span class="tech-item">API</span>
+                        </div>
+                        <div class="card-body-btns">
+                          <a
+                            href="http://15.222.119.165:4000/"
+                            target="_blank"
+                            class="btn btn-blue"
+                            >Live Demo</a
+                          >
+                          <a
+                            target="_blank"
+                            href="https://github.com/piotrwysocki-code/DogDetective-ExpressServer"
+                            class="btn btn-orange"
+                            >View Code</a
+                          >
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="card-body">
-                    <h4 class="card-title">Dog Detective</h4>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
+                </div>
+                <div class="carousel-item">
+                  <div class="row g-5 d-flex justify-content-center">
+                    <div class="card-wrapper col-lg-8 col-12">
+                      <div class="card">
+                        <div class="image-wrapper">
+                          <img
+                            src="/images/project-imgs/dogdetectiveapi.gif"
+                            class="card-img-top"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body">
+                          <h4 class="card-title">Dog Detective API</h4>
+
+                          <p class="card-text">
+                            Dog Detective front-end server POSTs requests to
+                            this API server which performs the image
+                            classification using a trained machine learning
+                            model that can accurately predict 120 different dog
+                            breeds given an image.
+                          </p>
+                        </div>
+
+                        <div
+                          class="d-flex flex-row flex-wrap gap-2 justify-content-center align-items-center mb-3"
+                        >
+                          <span class="tech-item">Python</span>
+                          <span class="tech-item">FastAPI</span>
+                          <span class="tech-item">TensorFlow</span>
+                          <span class="tech-item">Keras</span>
+                          <span class="tech-item">AWS EC2</span>
+                          <span class="tech-item">API</span>
+                        </div>
+                        <div class="card-body-btns">
+                          <a
+                            target="_blank"
+                            href="http://99.79.108.211/docs"
+                            class="btn btn-blue"
+                            >Live Demo</a
+                          >
+                          <a
+                            target="_blank"
+                            href="https://github.com/piotrwysocki-code/DogDetective-FastAPI"
+                            class="btn btn-orange"
+                            >View Code</a
+                          >
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="card-body-btns">
-                    <a href="#" class="btn btn-blue">Live Demo</a>
-                    <a href="#" class="btn btn-orange">View Code</a>
+                </div>
+                <div class="carousel-item">
+                  <div class="row g-5 d-flex justify-content-center">
+                    <div class="card-wrapper col-lg-8 col-12">
+                      <div class="card">
+                        <div class="image-wrapper">
+                          <img
+                            src="/images/project-imgs/retailadmin.gif"
+                            class="card-img-top"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body">
+                          <h4 class="card-title">Retail Admin</h4>
+                          <p class="card-text">
+                            This application performs full CRUD operations
+                            between the front and back end servers and allows
+                            the user to manage their sales, products, employees,
+                            and more. Requests are proxied through an Express.js
+                            CloudFunction.
+                          </p>
+                        </div>
+                        <div
+                          class="d-flex flex-row flex-wrap gap-2 justify-content-center align-items-center mb-3"
+                        >
+                          <span class="tech-item">React.js</span>
+                          <span class="tech-item">Node.js</span>
+                          <span class="tech-item">Express</span>
+                          <span class="tech-item">Tailwind CSS</span>
+                          <span class="tech-item">CORS Proxy</span>
+                          <span class="tech-item">GCP CloudFunction</span>
+                          <span class="tech-item">API</span>
+                          <span class="tech-item">CRUD</span>
+                        </div>
+                        <div class="card-body-btns">
+                          <a
+                            href="https://cute-monstera-95dc4c.netlify.app/"
+                            target="_blank"
+                            class="btn btn-blue"
+                            >Live Demo</a
+                          >
+                          <a
+                            href="https://github.com/piotrwysocki-code/RetailDashboard-ReactApp"
+                            target="_blank"
+                            class="btn btn-orange"
+                            >View Code</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row g-5 d-flex justify-content-center">
+                    <div class="card-wrapper col-lg-8 col-12">
+                      <div class="card">
+                        <div class="image-wrapper">
+                          <img
+                            src="/images/project-imgs/retailadminapi.gif"
+                            class="card-img-top"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body">
+                          <h4 class="card-title">Retail Admin API</h4>
+                          <p class="card-text">
+                            Retail Admin application communicates with this
+                            ASP.NET REST API to perform CRUD operations on the
+                            SQL database. Allows the client to manage their data
+                            relating to sales, products, employees, and more.
+                          </p>
+                        </div>
+                        <div
+                          class="d-flex flex-row flex-wrap gap-2 justify-content-center align-items-center mb-3"
+                        >
+                          <span class="tech-item">C#</span>
+                          <span class="tech-item">LINQ</span>
+                          <span class="tech-item">ASP.NET</span>
+                          <span class="tech-item">EF Core</span>
+                          <span class="tech-item">ORM</span>
+                          <span class="tech-item">API</span>
+                          <span class="tech-item">SQL</span>
+                          <span class="tech-item">AWS RDS</span>
+                          <span class="tech-item">AWS EC2</span>
+                          <span class="tech-item">IIS Web Server</span>
+                        </div>
+                        <div class="card-body-btns">
+                          <a
+                            href="http://3.98.66.250/swagger/index.html"
+                            target="_blank"
+                            class="btn btn-blue"
+                            >Live Demo</a
+                          >
+                          <a
+                            href="https://github.com/piotrwysocki-code/ProductManager-.NET-APIServer"
+                            target="_blank"
+                            class="btn btn-orange"
+                            >View Code</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row g-5 d-flex justify-content-center">
+                    <div class="card-wrapper col-lg-8 col-12">
+                      <div class="card">
+                        <div class="image-wrapper">
+                          <img
+                            src="/images/project-imgs/landscaping.gif"
+                            class="card-img-top"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body">
+                          <h4 class="card-title">
+                            A-One Landscaping Business Website
+                          </h4>
+                          <p class="card-text">
+                            A small business website commissioned for a local
+                            landscaping company. Client requested a solution
+                            that allowed customers to contact him directly from
+                            the website.
+                          </p>
+                        </div>
+                        <div
+                          class="d-flex flex-row flex-wrap gap-2 justify-content-center align-items-center mb-3"
+                        >
+                          <span class="tech-item">JQuery</span>
+                          <span class="tech-item">AJAX</span>
+                          <span class="tech-item">Bootstrap 5</span>
+                          <span class="tech-item">reCAPTCHA</span>
+                          <span class="tech-item">Node.js</span>
+                          <span class="tech-item">Nodemailer</span>
+                          <span class="tech-item">Express</span>
+                          <span class="tech-item">AWS CloudFront</span>
+                          <span class="tech-item">AWS Route 53</span>
+                          <span class="tech-item">GCP CloudFunction</span>
+                        </div>
+                        <div class="card-body-btns">
+                          <a
+                            href="https://a-onelandscaping.com/"
+                            target="_blank"
+                            class="btn btn-blue"
+                            >Live Demo</a
+                          >
+                          <a
+                            href="https://github.com/piotrwysocki-code/A-OneLandscaping-BootstrapWebsite"
+                            target="_blank"
+                            class="btn btn-orange"
+                            >View Code</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row g-5 d-flex justify-content-center">
+                    <div class="card-wrapper col-lg-8 col-12">
+                      <div class="card">
+                        <div class="image-wrapper">
+                          <img
+                            src="/images/project-imgs/leechcalculator.gif"
+                            class="card-img-top"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body">
+                          <h4 class="card-title">
+                            Leech Calculator Utility Project
+                          </h4>
+                          <p class="card-text">
+                            Tool used by players to quickly and accurately
+                            calculate the value of services sold in-game, track
+                            their earnings, and more. Retrieves player data from
+                            the live game server's API.
+                          </p>
+                        </div>
+                        <div
+                          class="d-flex flex-row flex-wrap gap-2 justify-content-center align-items-center mb-3"
+                        >
+                          <span class="tech-item">JQuery</span>
+                          <span class="tech-item">AJAX</span>
+                          <span class="tech-item">Node.js</span>
+                          <span class="tech-item">Express</span>
+                          <span class="tech-item">CORS Proxy</span>
+                          <span class="tech-item">AWS CloudFront</span>
+                          <span class="tech-item">AWS Route 53</span>
+                          <span class="tech-item">GCP CloudFunction</span>
+                          <span class="tech-item">API</span>
+                        </div>
+                        <div class="card-body-btns">
+                          <a
+                            href="https://leechcalculator.com/"
+                            target="_blank"
+                            class="btn btn-blue"
+                            >Live Demo</a
+                          >
+                          <a
+                            href="https://github.com/piotrwysocki-code/LeechCalculator-HobbyWebsite"
+                            target="_blank"
+                            class="btn btn-orange"
+                            >View Code</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row g-5 d-flex justify-content-evenly">
+                    <div class="card-wrapper col-lg-8 col-12">
+                      <div class="card">
+                        <div class="image-wrapper">
+                          <img
+                            src="/images/project-imgs/productmanager.gif"
+                            class="card-img-top"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body">
+                          <h4 class="card-title">Product Manager</h4>
+                          <p class="card-text">
+                            A more basic version of the Retail Admin
+                            application. Allows the user to add sales,
+                            employees, products and more.
+                          </p>
+                        </div>
+                        <div
+                          class="d-flex flex-row flex-wrap gap-2 justify-content-center align-items-center mb-3"
+                        >
+                          <span class="tech-item">C#</span>
+                          <span class="tech-item">ASP.NET</span>
+                          <span class="tech-item">MVC</span>
+                          <span class="tech-item">Razor Pages</span>
+                          <span class="tech-item">Bootstrap</span>
+                          <span class="tech-item">API</span>
+                          <span class="tech-item">Amazon EC2</span>
+                          <span class="tech-item">IIS Web Server</span>
+                        </div>
+                        <div class="card-body-btns">
+                          <a
+                            href="http://3.98.66.250/"
+                            target="_blank"
+                            class="btn btn-blue"
+                            >Live Demo</a
+                          >
+                          <a
+                            href="https://github.com/piotrwysocki-code/ProductManager-.NET-APIServer"
+                            target="_blank"
+                            class="btn btn-orange"
+                            >View Code</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="row g-5 d-flex justify-content-evenly">
+                    <div class="card-wrapper col-lg-8 col-12">
+                      <div class="card">
+                        <div class="image-wrapper">
+                          <img
+                            src="/images/project-imgs/dailymotion.gif"
+                            class="card-img-top"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body">
+                          <h4 class="card-title">Dailymotion Playlist</h4>
+                          <p class="card-text">
+                            An Angular application that queries data from the
+                            dailymotion API allowing the user to browse
+                            DailyMotion videos and create their own playlist.
+                          </p>
+                        </div>
+                        <div
+                          class="d-flex flex-row flex-wrap gap-2 justify-content-center align-items-center mb-3"
+                        >
+                          <span class="tech-item">TypeScript</span>
+                          <span class="tech-item">Angular</span>
+                          <span class="tech-item">API</span>
+                        </div>
+                        <div class="card-body-btns">
+                          <a
+                            href="https://admiring-golick-29325a.netlify.app/"
+                            target="_blank"
+                            class="btn btn-blue"
+                            >Live Demo</a
+                          >
+                          <a
+                            href="https://github.com/piotrwysocki-code/DailymotionAPI-Angular"
+                            target="_blank"
+                            class="btn btn-orange"
+                            >View Code</a
+                          >
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div
-                class="card-wrapper col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-12"
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselControls"
+                data-bs-slide="prev"
               >
-                <div class="card">
-                  <div class="image-wrapper">
-                    <img
-                      src="/images/nebula.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">Asteroids Game</h4>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                  </div>
-                  <div class="card-body-btns">
-                    <a href="#" class="btn btn-blue">Live Demo</a>
-                    <a href="#" class="btn btn-orange">View Code</a>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card-wrapper col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-12"
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselControls"
+                data-bs-slide="next"
               >
-                <div class="card">
-                  <div class="image-wrapper">
-                    <img
-                      src="/images/nebula.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">Business Website</h4>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                  </div>
-                  <div class="card-body-btns">
-                    <a href="#" class="btn btn-blue">Live Demo</a>
-                    <a href="#" class="btn btn-orange">View Code</a>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card-wrapper col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-12"
-              >
-                <div class="card">
-                  <div class="image-wrapper">
-                    <img
-                      src="/images/nebula.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">Hobby Website</h4>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                  </div>
-                  <div class="card-body-btns">
-                    <a href="#" class="btn btn-blue">Live Demo</a>
-                    <a href="#" class="btn btn-orange">View Code</a>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card-wrapper col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-12"
-              >
-                <div class="card">
-                  <div class="image-wrapper">
-                    <img
-                      src="/images/nebula.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">Amazon Clone</h4>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                  </div>
-                  <div class="card-body-btns">
-                    <a href="#" class="btn btn-blue">Live Demo</a>
-                    <a href="#" class="btn btn-orange">View Code</a>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card-wrapper col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-12"
-              >
-                <div class="card">
-                  <div class="image-wrapper">
-                    <img
-                      src="/images/nebula.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">Product Manager</h4>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                  </div>
-                  <div class="card-body-btns">
-                    <a href="#" class="btn btn-blue">Live Demo</a>
-                    <a href="#" class="btn btn-orange">View Code</a>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card-wrapper col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-12"
-              >
-                <div class="card">
-                  <div class="image-wrapper">
-                    <img
-                      src="/images/nebula.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">Dailymotion Playlist</h4>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                  </div>
-                  <div class="card-body-btns">
-                    <a href="#" class="btn btn-blue">Live Demo</a>
-                    <a href="#" class="btn btn-orange">View Code</a>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card-wrapper col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-12"
-              >
-                <div class="card">
-                  <div class="image-wrapper">
-                    <img
-                      src="/images/nebula.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">Asteroids Game</h4>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                  </div>
-                  <div class="card-body-btns">
-                    <a href="#" class="btn btn-blue">Live Demo</a>
-                    <a href="#" class="btn btn-orange">View Code</a>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card-wrapper col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-12"
-              >
-                <div class="card">
-                  <div class="image-wrapper">
-                    <img
-                      src="/images/nebula.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">Asteroids Game</h4>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                  </div>
-                  <div class="card-body-btns">
-                    <a href="#" class="btn btn-blue">Live Demo</a>
-                    <a href="#" class="btn btn-orange">View Code</a>
-                  </div>
-                </div>
-              </div>
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
         </div>
@@ -440,7 +664,7 @@
               class="m-auto container row d-flex justify-content-center align-items-center"
             >
               <div
-                class="col-sm-12 col-md-12 col-lg-6 about-carousel-item-1-image d-flex flex-column justify-content-center align-items-center"
+                class="col-sm-12 col-md-12 col-lg-6 d-flex flex-column justify-content-center align-items-center"
               >
                 <!-- <img src="images/piotr.png" class="piotr-picture" /> -->
                 <h1 class="about-carousel-item-1-title">Piotr Wysocki</h1>
@@ -472,16 +696,16 @@
                 <hr style="width: 50%" />
               </div>
               <div
-                id="carouselControls"
+                id="aboutCarousel"
                 class="carousel slide col-sm-12 col-md-12 col-lg-6"
                 data-bs-ride="carousel"
+                data-bs-interval="8000"
               >
                 <div class="carousel-inner">
-                  <div class="carousel-item active">
+                  <h1 class="about-carousel-item-1-title">HELLO!</h1>
+                  <h5>Here's who I am and what I do</h5>
+                  <div class="carousel-item active px-5">
                     <div class="about-carousel-item">
-                      <h1 class="about-carousel-item-1-title">HELLO!</h1>
-                      <h5>Here's who I am and what I do</h5>
-                      <br />
                       <p class="text-center">
                         I'm a third-year Software Development and Networking
                         Engineering student at Sheridan College. My love for
@@ -493,11 +717,42 @@
                       </p>
                     </div>
                   </div>
+                  <div class="carousel-item px-5">
+                    <div class="about-carousel-item">
+                      <p class="text-center">
+                        In addition to programming, I love art and design. I
+                        enjoy creating my own graphics and logos in Adobe
+                        Photoshop.
+                      </p>
+
+                      <div
+                        class="d-flex flex-row justify-content-center align-items-center gap-2"
+                      >
+                        <img src="images/pwlogo.png" style="width: 125px" />
+                        <img src="images/pwlogo2.png" style="width: 125px" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item px-5">
+                    <div class="about-carousel-item">
+                      <p class="text-center">
+                        Recently I was commissioned to build a website and
+                        create a business logo for a local landscaping company,
+                        A-One Landscaping.
+                      </p>
+                      <div
+                        class="d-flex flex-row justify-content-center align-items-center gap-2"
+                      >
+                        <img src="images/a1-logo.png" style="width: 125px" />
+                        <img src="images/a1-truck.png" style="width: 125px" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <button
                   class="carousel-control-prev"
                   type="button"
-                  data-bs-target="#carouselControls"
+                  data-bs-target="#aboutCarousel"
                   data-bs-slide="prev"
                 >
                   <span
@@ -509,7 +764,7 @@
                 <button
                   class="carousel-control-next"
                   type="button"
-                  data-bs-target="#carouselControls"
+                  data-bs-target="#aboutCarousel"
                   data-bs-slide="next"
                 >
                   <span

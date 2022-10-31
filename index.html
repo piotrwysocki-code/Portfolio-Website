@@ -114,16 +114,20 @@
       >
         <div id="projects-section">
           <h1 id="projects-title" class="display-4">Projects</h1>
-          <div class="container projects-container d-flex flex-col">
+          <div
+            class="container projects-container d-flex flex-column justify-content-center align-items-center"
+          >
             <div
               id="carouselControls"
               class="carousel slide"
               data-bs-ride="carousel"
-              data-bs-interval="10000"
+              data-bs-interval="15000"
             >
-              <div class="carousel-inner m-3">
+              <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <div class="row g-5 d-flex justify-content-center">
+                  <div
+                    class="row g-5 d-flex justify-content-center align-items-center"
+                  >
                     <div class="card-wrapper col-lg-8 col-12">
                       <div class="card">
                         <div class="image-wrapper">
@@ -178,7 +182,7 @@
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <div class="row g-5 d-flex justify-content-center">
+                  <div class="row d-flex justify-content-center">
                     <div class="card-wrapper col-lg-8 col-12">
                       <div class="card">
                         <div class="image-wrapper">
@@ -230,7 +234,7 @@
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <div class="row g-5 d-flex justify-content-center">
+                  <div class="row d-flex justify-content-center">
                     <div class="card-wrapper col-lg-8 col-12">
                       <div class="card">
                         <div class="image-wrapper">
@@ -282,7 +286,7 @@
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <div class="row g-5 d-flex justify-content-center">
+                  <div class="row d-flex justify-content-center">
                     <div class="card-wrapper col-lg-8 col-12">
                       <div class="card">
                         <div class="image-wrapper">
@@ -335,7 +339,7 @@
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <div class="row g-5 d-flex justify-content-center">
+                  <div class="row d-flex justify-content-center">
                     <div class="card-wrapper col-lg-8 col-12">
                       <div class="card">
                         <div class="image-wrapper">
@@ -390,7 +394,7 @@
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <div class="row g-5 d-flex justify-content-center">
+                  <div class="row d-flex justify-content-center">
                     <div class="card-wrapper col-lg-8 col-12">
                       <div class="card">
                         <div class="image-wrapper">
@@ -668,11 +672,9 @@
         <div id="about-section">
           <h1 id="about-title" class="display-4">About Me</h1>
           <div class="section-container container">
-            <div
-              class="m-auto container row d-flex justify-content-center align-items-center"
-            >
+            <div class="m-auto row d-flex flex-col flex-lg-row">
               <div
-                class="col-sm-12 col-md-12 col-lg-6 d-flex flex-column justify-content-center align-items-center"
+                class="d-flex flex-column justify-content-center align-items-center col-12 col-lg-6"
               >
                 <!-- <img src="images/piotr.png" class="piotr-picture" /> -->
                 <h1 class="about-carousel-item-1-title">Piotr Wysocki</h1>
@@ -705,27 +707,28 @@
               </div>
               <div
                 id="aboutCarousel"
-                class="carousel slide col-sm-12 col-md-12 col-lg-6"
+                class="carousel slide col-12 col-lg-6"
                 data-bs-ride="carousel"
                 data-bs-interval="8000"
               >
                 <div class="carousel-inner">
                   <h1 class="about-carousel-item-1-title">HELLO!</h1>
-                  <h5>Here's who I am and what I do</h5>
-                  <div class="carousel-item active px-5">
+                  <h5 class="about-carousel-item-1-subtitle">
+                    Here's who I am and what I do
+                  </h5>
+                  <div class="carousel-item active">
                     <div class="about-carousel-item">
                       <p class="text-center">
                         I'm a third-year Software Development and Networking
                         Engineering student at Sheridan College. My love for
                         programming is fueled by a long standing interest in
                         computers, art, and design. From a young age I have been
-                        building and fixing computers, this technical aptitude
-                        paired with my creative desires lead me to pursue
-                        software development.
+                        building and fixing computers, technical aptitudes and
+                        creative desires lead me to pursue software development.
                       </p>
                     </div>
                   </div>
-                  <div class="carousel-item px-5">
+                  <div class="carousel-item">
                     <div class="about-carousel-item">
                       <p class="text-center">
                         In addition to programming, I love art and design. I
@@ -741,7 +744,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="carousel-item px-5">
+                  <div class="carousel-item">
                     <div class="about-carousel-item">
                       <p class="text-center">
                         Recently I was commissioned to build a website and

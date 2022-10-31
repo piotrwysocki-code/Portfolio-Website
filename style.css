@@ -175,7 +175,7 @@ input[type="text"], input[type="email"], textarea {
   padding: 10rem 0 10rem;
 }
 
-#about-section, #experience-section {
+#experience-section {
   padding: 0 .8rem 0;
 }
 
@@ -195,7 +195,8 @@ input[type="text"], input[type="email"], textarea {
   backdrop-filter: blur( 4.5px );
   -webkit-backdrop-filter: blur( 4.5px );
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.1 );  padding: 1rem;
+  border: 1px solid rgba( 255, 255, 255, 0.1 );  
+  padding: 1rem;
   height: 100%;
 }
 
@@ -257,6 +258,7 @@ input[type="text"], input[type="email"], textarea {
 .btn-orange:active {
   background-color: rgba(205, 140, 80, 1);
   font-weight: bold;
+
 }
 
 .btn-blue {
@@ -296,13 +298,15 @@ input[type="text"], input[type="email"], textarea {
   font-weight: 1000;
 }
 
+.about-carousel-item-1-subtitle{
+  margin: 0;
+}
 
 .about-carousel-item{
   padding: 3rem 0rem 3rem;
   min-height: 320px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 

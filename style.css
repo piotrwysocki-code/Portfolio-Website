@@ -69,29 +69,51 @@ body {
   gap: .2rem;
   font-weight: bold ;
   color: rgb(135, 237, 255) !important;
+  transition: 2s ease-in-out all;
 }
 
-.nav-link-text{
+.nav-link-text1, .nav-link-text2, .nav-link-text3, .nav-link-text4, .nav-link-text5{
   max-width: 0px;
   overflow:hidden;
-
+  transition: 0s ease-in-out all;
 }
 
 .nav-link:hover {
   color: rgb(0, 255, 255) !important;
 }
 
-.nav-link-hover:hover .nav-link-text { 
-  animation-name: navAnim;
+.nav-link:not(:hover) .nav-link-text1, 
+.nav-link:not(:hover) .nav-link-text2,
+.nav-link:not(:hover) .nav-link-text3,
+.nav-link:not(:hover) .nav-link-text4,
+.nav-link:not(:hover) .nav-link-text5
+{ 
+  animation-name: navAnim2;
   animation-fill-mode: forwards;  
   animation-duration: 2s;
   animation-iteration-count: 1;
-  animation-timing-function: ease-out;
+}
+
+.nav-link:hover .nav-link-text1, 
+.nav-link:hover .nav-link-text2,
+.nav-link:hover .nav-link-text3,
+.nav-link:hover .nav-link-text4,
+.nav-link:hover .nav-link-text5
+{ 
+  animation-name: navAnim;
+  animation-fill-mode: forwards;  
+  animation-duration: 2.5s;
+  animation-iteration-count: 1;
 }
 
 @keyframes navAnim {
   from { max-width: 0px;}
   to { max-width: 300px;}
+}
+
+@keyframes navAnim2 {
+  from { max-width: 300px;}
+  to { max-width: 0px;}
 }
 
 .navbar-brand > img {

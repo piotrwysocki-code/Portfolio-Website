@@ -18,6 +18,7 @@ let isLogoVisible = false;
 
 function showTitle(){
     let mainTitleText = "Piotr Wysocki";
+    
     let splitText = mainTitleText.split(" ");
 
     $("#main-title").text('');
@@ -91,28 +92,14 @@ $('.navbar-nav>li>a').on('click', ()=> {
 });
 
 $('.navbar').on('show.bs.collapse', ()=> {
-    $('.nav-link').removeClass("nav-link-hover");
     $(".navbar").addClass("navbar-secondary");
-    $('.nav-link-text1').animate({maxWidth: 300}, 1000);
-    $('.nav-link-text2').animate({maxWidth: 300}, 1000);
-    $('.nav-link-text3').animate({maxWidth: 300}, 1000);
-    $('.nav-link-text4').animate({maxWidth: 300}, 1000);
-    $('.nav-link-text5').animate({maxWidth: 300}, 1000);
 
     isCollapseNavVisible = true;
     if(isLogoVisible == false){
         $('.navbar-brand > img').animate({opacity: 1}, 1000);
         isLogoVisible = true;
     }
-}).on('hide.bs.collapse', ()=> 
-{
-    $('.nav-link-text1').animate({maxWidth: 0}, 50);
-    $('.nav-link-text2').animate({maxWidth: 0}, 50);
-    $('.nav-link-text3').animate({maxWidth: 0}, 50);
-    $('.nav-link-text4').animate({maxWidth: 0}, 50);
-    $('.nav-link-text5').animate({maxWidth: 0}, 50);
-
-    $('.nav-link').addClass("nav-link-hover");
+}).on('hide.bs.collapse', ()=> {
 
     if(isTitleVisible){
         $('.navbar-brand > img').animate({opacity: 0}, 50);

@@ -69,15 +69,13 @@ body {
   gap: .2rem;
   font-weight: bold ;
   color: rgb(135, 237, 255) !important;
-  transition: 2s ease-in-out all;
 }
 
 .nav-link-text1, .nav-link-text2, .nav-link-text3, .nav-link-text4, .nav-link-text5{
   overflow:hidden;
-  animation-name: navAnim2;
-  animation-fill-mode: forwards;  
-  animation-duration: 2s;
-  animation-iteration-count: 1;
+  max-width: 0px;
+  transition: max-width 1.5s;
+  transition-delay: .25s;
 }
 
 .nav-link:hover {
@@ -90,20 +88,7 @@ body {
 .nav-link-hover:hover .nav-link-text4,
 .nav-link-hover:hover .nav-link-text5
 { 
-  animation-name: navAnim;
-  animation-fill-mode: forwards;  
-  animation-duration: 2.5s;
-  animation-iteration-count: 1;
-}
-
-@keyframes navAnim {
-  from { max-width: 0px;}
-  to { max-width: 300px;}
-}
-
-@keyframes navAnim2 {
-  from { max-width: 300px;}
-  to { max-width: 0px;}
+  max-width: 300px;
 }
 
 .navbar-brand > img {
@@ -117,6 +102,8 @@ body {
   margin: 0;
   font-weight: bolder;
   mix-blend-mode: exclusion;
+  font-weight: 1000;
+
 }
 
 #main-logo{
@@ -130,7 +117,7 @@ body {
 
 
 .main-title-span{
-  transform: translateY(-20px);
+  transform: translateY(-40px);
   display: inline-block;
   transition: all 1s ease;
   color: rgb(55, 0, 255);
@@ -145,7 +132,6 @@ body {
 #secondary-title {
   font-size: 2rem;
   mix-blend-mode: exclusion;
-
 }
 
 #projects-title, #experience-title, #about-title, #connect-title {
@@ -186,13 +172,8 @@ input[type="text"], input[type="email"], textarea {
   padding: 10rem 0 10rem;
 }
 
-#experience-section {
-  padding: 0 .8rem 0;
-}
-
 #connect-section {
   min-height: fit-content;
-  padding: 0 1.5rem 1rem;
 }
 
 .main {
@@ -209,6 +190,7 @@ input[type="text"], input[type="email"], textarea {
   border: 1px solid rgba( 255, 255, 255, 0.1 );  
   padding: 1rem;
   height: 100%;
+  min-height: 50vh;
 }
 
 .card-title{
@@ -307,6 +289,11 @@ input[type="text"], input[type="email"], textarea {
 
 .about-carousel-item-1-title{
   font-weight: 1000;
+  font-family: 'Press Start 2P';
+  font-size: 2rem;
+  margin: 0;
+  font-weight: bolder;
+  mix-blend-mode: exclusion;
 }
 
 .about-carousel-item-1-subtitle{
@@ -348,14 +335,14 @@ input[type="text"], input[type="email"], textarea {
   content: '>';
   font-size: 45px;
   font-weight: bolder;
-  color: rgb(0, 234, 255);
+  color: rgba(255, 203, 130, 1) !important;
 }
 
 .carousel-control-prev-icon:after {
   content: '<';
   font-weight: bolder;
   font-size: 45px;
-  color: rgb(0, 234, 255);
+  color: rgba(255, 203, 130, 1) !important;
 }
 .logo{
   max-height: 200px;
@@ -409,6 +396,15 @@ input[type="text"], input[type="email"], textarea {
   min-width: 50px;
   padding: 5px;
   font-size: 8pt;
+}
+
+.about-carousel-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+
 }
 
 @media only screen and (max-width: 768px) {

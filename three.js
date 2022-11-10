@@ -112,17 +112,17 @@ function onDocumentMouseMove(event) {
 }
 
 let planetGeo1 = new THREE.SphereGeometry(1, 24, 24);
-let planetGeo2 = new THREE.SphereGeometry(3, 24, 24);
+//let planetGeo2 = new THREE.SphereGeometry(3, 24, 24);
 let planetGeo3 = new THREE.SphereGeometry(6, 24, 24);
 let planetGeo4 = new THREE.SphereGeometry(2, 24, 24);
 let OSGMaterial = new THREE.MeshStandardMaterial( { color: 0x0ff0FF });
 OSGMaterial.normalMap = planetTexture;
 let planet = new THREE.Mesh( planetGeo1, OSGMaterial );
-let planet2 = new THREE.Mesh( planetGeo2, OSGMaterial );
+//let planet2 = new THREE.Mesh( planetGeo2, OSGMaterial );
 let planet3 = new THREE.Mesh( planetGeo3, OSGMaterial );
 let planet4 = new THREE.Mesh( planetGeo4, OSGMaterial );
 
-planet2.position.y = 15
+//planet2.position.y = 15
 planet3.position.z = 30
 planet3.position.y = 50
 planet4.position.y = 30
@@ -133,10 +133,10 @@ planetObj.add(planet);
 planetObj.position.x = 0;
 scene.add(planetObj);
 
-let planetObj2 = new THREE.Object3D();
-planetObj2.add(planet);
-planetObj2.position.x = 0;
-scene.add(planetObj2);
+//let planetObj2 = new THREE.Object3D();
+//planetObj2.add(planet);
+//planetObj2.position.x = 0;
+//scene.add(planetObj2);
 
 let planetObj3 = new THREE.Object3D();
 planetObj3.add(planet);
@@ -148,7 +148,7 @@ planetObj4.add(planet);
 planetObj4.position.x = 0;
 scene.add(planetObj4);
 
-planetObj2.add(planet2);
+//planetObj2.add(planet2);
 planetObj3.add(planet3);
 planetObj4.add(planet4);
 
@@ -169,12 +169,12 @@ function animate() {
   planetObj.rotation.y += .1 * (targetX - sun.rotation.y);
   planetObj.rotation.x += .1 * (targetY - sun.rotation.x);
   planetObj.rotation.z += -.1 * (targetY - sun.rotation.x);
-  planetObj2.rotateY(-0.009);
+ /* planetObj2.rotateY(-0.009);
   planetObj2.rotateX(0.009);
   planetObj2.rotateZ(0.009);
   planetObj2.rotation.y += .002 * (targetX - sun.rotation.y);
   planetObj2.rotation.x += .002 * (targetY - sun.rotation.x);
-  planetObj2.rotation.z += -.002 * (targetY - sun.rotation.x);
+  planetObj2.rotation.z += -.002 * (targetY - sun.rotation.x);*/
   planetObj3.rotateY(-0.009);
   planetObj3.rotateX(-0.003);
   planetObj3.rotateZ(0.007);

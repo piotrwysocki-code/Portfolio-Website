@@ -143,6 +143,7 @@ function submitConnectForm(){
             dataType : 'json',
             encode: true
         }).done((results) => {
+            console.log(results);
             if(results.Success){
                 grecaptcha.reset();
                 $("#name, #email, #subject, #message").val('').removeClass('is-valid is-invalid');

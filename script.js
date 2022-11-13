@@ -49,6 +49,11 @@ function complete(timer) {
 $(()=>{
     $('.main-title').animate({opacity: 1}, 3000);
     showTitle();
+
+    setTimeout(()=>{
+        $('#canvas').fadeIn(3000);
+    }, 1000)
+
 })
 
 $("#main-section").scroll(()=> {

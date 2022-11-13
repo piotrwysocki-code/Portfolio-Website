@@ -51,7 +51,7 @@ $(()=>{
     showTitle();
 
     setTimeout(()=>{
-        $('#canvas').fadeIn(3000);
+        $('#canvas').animate({opacity: 1}, 3000);
     }, 1000)
 
 })

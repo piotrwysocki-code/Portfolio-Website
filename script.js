@@ -46,6 +46,19 @@ function complete(timer) {
     timer = null;
 }
 
+
+$(window).resize(()=> {
+    let windowsize = $(window).width();
+    if (windowsize < 992) {
+        $(".nav-link-text1, .nav-link-text2, .nav-link-text3, .nav-link-text4, .nav-link-text5")
+        .css("max-width", "300px");
+    }else{
+        $(".nav-link-text1, .nav-link-text2, .nav-link-text3, .nav-link-text4, .nav-link-text5")
+        .css("max-width", "0px");
+    }
+
+  });
+
 $(()=>{
     $('.main-title').animate({opacity: 1}, 3000);
     showTitle();
@@ -54,7 +67,17 @@ $(()=>{
         $('#canvas').animate({opacity: 1}, 3000);
     }, 1000)
 
+    let windowsize = $(window).width();
+    if (windowsize < 992) {
+        $(".nav-link-text1, .nav-link-text2, .nav-link-text3, .nav-link-text4, .nav-link-text5")
+        .css("max-width", "300px");
+    }else{
+        $(".nav-link-text1, .nav-link-text2, .nav-link-text3, .nav-link-text4, .nav-link-text5")
+        .css("max-width", "0px");
+    }
+
 })
+
 
 $("#main-section").scroll(()=> {
     if ($("#projects-section-anchor").position().top <= 0) {
@@ -100,6 +123,7 @@ $('.navbar').on('show.bs.collapse', ()=> {
     $(".navbar").addClass("navbar-secondary");
 
     isCollapseNavVisible = true;
+
     if(isLogoVisible == false){
         $('.navbar-brand > img').animate({opacity: 1}, 1000);
         isLogoVisible = true;

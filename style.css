@@ -89,7 +89,7 @@ body {
 .nav-link-hover:hover .nav-link-text4,
 .nav-link-hover:hover .nav-link-text5
 { 
-  max-width: 300px;
+  max-width: 300px!important;
 }
 
 .navbar-brand > img {
@@ -104,7 +104,6 @@ body {
   font-weight: bolder;
   mix-blend-mode: exclusion;
   font-weight: 1000;
-
 }
 
 #main-logo{

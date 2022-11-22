@@ -207,6 +207,8 @@ input[type="text"], input[type="email"], textarea {
 
 .card-img-top {
   border-radius: 10px 10px 10px 10px;
+  object-fit:cover;
+  max-height: 500px;
 }
 
 .experience-item {

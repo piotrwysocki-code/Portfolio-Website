@@ -66,7 +66,7 @@ $(()=>{
         $('#canvas').animate({opacity: 1}, 3000);
     }, 1000)
 
-    let windowsize = $(window).width();
+    /*let windowsize = $(window).width();
 
     if (windowsize < 992) {
         $(".nav-link-text1, .nav-link-text2, .nav-link-text3, .nav-link-text4, .nav-link-text5")
@@ -74,7 +74,7 @@ $(()=>{
     }else{
         $(".nav-link-text1, .nav-link-text2, .nav-link-text3, .nav-link-text4, .nav-link-text5")
         .css("max-width", "0px");
-    }
+    }*/
 
 })
 

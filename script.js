@@ -14,7 +14,6 @@ class Connect {
 
 let isTitleVisible = true;
 let isCollapseNavVisible = false;
-let isLogoVisible = false;
 
 function showTitle(){
     let mainTitleText = "Piotr Wysocki";
@@ -68,6 +67,7 @@ $(()=>{
     }, 1000)
 
     let windowsize = $(window).width();
+
     if (windowsize < 992) {
         $(".nav-link-text1, .nav-link-text2, .nav-link-text3, .nav-link-text4, .nav-link-text5")
         .css("max-width", "300px");
@@ -91,21 +91,16 @@ $("#main-section").scroll(()=> {
     if  ($(".main-title").position().top + $(".main-title").height() / 2 <= 0) {
         if(isTitleVisible == true){
             $('.main-title').animate({opacity: 0}, 1000);
-            $('.navbar-brand > img').animate({opacity: 1}, 1000);
-            isLogoVisible = true
             isTitleVisible = false;
         }
     }
 
     if  ($(".main-title").position().top >= 0 - $(".main-title").height() / 3 ) {
         if(isTitleVisible == false){
-            $('.navbar-brand > img').animate({opacity: 0}, 1000);
             $('.main-title').animate({opacity: 1}, 3000);
             $('.main-title-span').removeClass('fade');
             $('.main-title-span').text('');
             showTitle();
-
-            isLogoVisible = false
             isTitleVisible = true;
         }
     }
@@ -123,18 +118,7 @@ $('.navbar').on('show.bs.collapse', ()=> {
     $(".navbar").addClass("navbar-secondary");
 
     isCollapseNavVisible = true;
-
-    if(isLogoVisible == false){
-        $('.navbar-brand > img').animate({opacity: 1}, 1000);
-        isLogoVisible = true;
-    }
 }).on('hide.bs.collapse', ()=> {
-
-    if(isTitleVisible){
-        $('.navbar-brand > img').animate({opacity: 0}, 50);
-        isLogoVisible = !isLogoVisible;
-    }
-
     if ($("#projects-section-anchor").position().top >= window.innerHeight) {
         $(".navbar").removeClass("navbar-secondary");
         console.log($("#projects-section-anchor").position().top <= window.innerHeight);

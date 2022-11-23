@@ -68,15 +68,15 @@ body {
   display: flex;
   flex-direction: row;
   gap: .2rem;
-  font-weight: bold ;
+  /*font-weight: bold ;*/
   color: rgb(135, 237, 255) !important;
 }
 
 .nav-link-text1, .nav-link-text2, .nav-link-text3, .nav-link-text4, .nav-link-text5{
   overflow:hidden;
-  max-width: 0px;
+  /*max-width: 0px;
   transition: max-width 1.5s;
-  transition-delay: .25s;
+  transition-delay: .25s;*/
 }
 
 .nav-link:hover {
@@ -89,7 +89,7 @@ body {
 .nav-link-hover:hover .nav-link-text4,
 .nav-link-hover:hover .nav-link-text5
 { 
-  max-width: 300px!important;
+ /* max-width: 300px!important;*/
 }
 
 .navbar-brand > img {

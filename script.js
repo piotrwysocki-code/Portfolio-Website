@@ -48,7 +48,7 @@ function complete(timer) {
 
 $(window).resize(()=> {
     let windowsize = $(window).width();
- /*   if (windowsize < 992) {
+/*  if (windowsize < 992) {
         $(".nav-link-text1, .nav-link-text2, .nav-link-text3, .nav-link-text4, .nav-link-text5")
         .css("max-width", "300px");
     }else{
